@@ -26,16 +26,16 @@ curl -X POST \
 
 ## Regarding plugin
 
-Domain Managerプラグインを使用し、カスタムドメインを作成。
-
-* __インストールとドメイン作成__
-  
-Domain Managerパッケージのインストール。
+API Gatewayに付与するカスタムドメインの作成に __Domain Managerプラグイン__ を使用。
+* __Domain Managerパッケージをインストール__
 
 ```
 npm install serverless-domain-manager
 ```
-カスタムドメインの作成。
+* __インストールとドメイン作成__
+
+
+ドメインの作成。
 
 ```
 serverless create_domain
