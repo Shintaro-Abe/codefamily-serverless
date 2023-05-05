@@ -26,7 +26,7 @@ curl -X POST \
 
 ## Regarding plugin
 
-API Gatewayに付与するカスタムドメインの作成に __Domain Managerプラグイン__ を使用。
+API Gatewayに付与するカスタムドメインの作成に、 __Domain Managerプラグイン__ を使用。
 * __Domain Managerパッケージをインストール__
 
 ```
