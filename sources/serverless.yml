@@ -56,7 +56,7 @@ resources:
 plugins:
   - serverless-domain-manager
 
-#カスタムドメインの作成
+#DomainManagerによるカスタムドメインの作成
 custom:
   customDomain:
     rest:

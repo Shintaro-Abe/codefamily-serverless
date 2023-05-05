@@ -24,11 +24,13 @@ curl -X POST \
 
 <img src="images/apicf16.png" width="50%">
 
-* __プラグインのインストール__
+## Regarding plugin
 
-カスタムドメインを作成するため、Domain Managerプラグインを使用。
+Domain Managerプラグインを使用し、カスタムドメインを作成。
 
-Domain Managerのインストール。
+* __インストールとドメイン作成__
+  
+Domain Managerパッケージのインストール。
 
 ```
 npm install serverless-domain-manager
@@ -43,6 +45,8 @@ Serverless frameworkのデプロイ。
 ```
 serverless deploy
 ```
+* __リソースの削除__
+
 Serverless frameworkの削除。
 
 ```
