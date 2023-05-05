@@ -3,6 +3,7 @@
 Zennに投稿した、「CodePipelineとServerless Frameworkでビルド【CodeFamily Practices 6/7】」に掲載したコードを収録したリポジトリ。
 
 <a href="https://zenn.dev/lifewithpiano/articles/codefamily_serverless"><img src="images/codefamily_serverless_zenn.png" width="50%">
+
 ## Summary
 API GatewayとLambdaの挙動を確認するための、シンプルな構成。
 
