@@ -1,0 +1,70 @@
+service: api-serverless
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+  region: ap-northeast-1
+  stage: prod
+  endpointType: REGIONAL
+  deploymentBucket:
+    name: abetest-deploymentbucket
+  #lambdaの実行ロール(SNSのポリシー追加)
+  iam:
+    role:
+      name: costnotification
+      statements:
+        - Effect: Allow
+          Action:
+            - sns:Publish
+          Resource:
+            - !GetAtt ApiSns.TopicArn
+
+package:
+  patterns:
+    - '!node_modules/**'
+    - '!buildspec.yml'
+    - '!package.json'
+    - '!package-lock.json'
+
+#LambdaとApiGatewayの作成
+functions:
+  ApiFunction:
+    name: Api-Lambda-Serverless
+    handler: sns.handler
+    environment:
+      topic: !GetAtt ApiSns.TopicArn
+    events: 
+      - http:
+          path: /
+          method: any
+          integration: lambda-proxy
+
+resources:
+  Resources:
+    #SNSトピックの作成
+    ApiSns:
+      Type: AWS::SNS::Topic
+      Properties: 
+        TopicName: Api-Notification
+        DisplayName: Notification
+        Subscription: 
+          - Endpoint: zennzennzenn-SE@gmail.com
+            Protocol: email
+
+#DomainManagerプラグインのインストール
+plugins:
+  - serverless-domain-manager
+
+#カスタムドメインの作成
+custom:
+  customDomain:
+    rest:
+      domainName: Your-FQFN
+      stage: prod
+      certificateName: 'Your-domain-name'
+      createRoute53Record: true
+      apiType: rest
+      hostedZoneId: 1a2b3c4d5e6f7g
+      endpointType: REGIONAL
+      securityPolicy: tls_1_2
