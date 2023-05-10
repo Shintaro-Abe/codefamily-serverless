@@ -8,7 +8,7 @@ Zennに投稿した、「CodePipelineとServerless Frameworkでビルド【CodeF
 API GatewayとLambdaの挙動を確認するための、シンプルな構成。
 
 * ソースステージをCodeCommit、ビルドステージをCodeBuildに設定したCodePipelineを構築。
-* ビルドはServerlessを使用。
+* ビルドはServerless Frameworkを使用。
 * API Gatewayへメールのタイトルと本文を指定してアクセスをすると、SNSトピックのサブスクリプションへメールを送信
 * 送信に成功すると、サブジェクトとメッセージの値をレスポンス。
 
