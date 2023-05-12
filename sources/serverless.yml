@@ -60,7 +60,7 @@ plugins:
 custom:
   customDomain:
     rest:
-      domainName: Your-FQFN
+      domainName: Your-FQDN
       stage: prod
       certificateName: 'Your-domain-name'
       createRoute53Record: true
